@@ -3,54 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official documentation for Nebulapp JIRA Forge App - Streamline your workflow with our powerful integration">
-    <meta name="keywords" content="Nebulapp, JIRA Forge, App Documentation, Atlassian Marketplace">
-    <title>Nebulapp - Documentation</title>
-    <link rel="icon" type="image/png" href="logo-small-rounded.png"> <!-- For .png files -->
-    <link rel="stylesheet" href="style.css">
+    <title>Nebulapp | Atlassian Forge Development</title>
+    <meta name="description" content="Nebulapp builds secure, cloud-native Jira apps using Atlassian Forge.">
+    <link rel="icon" type="image/svg+xml" href="assets/nebulapp-logo.svg"> 
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="top-bar">
-        <div class="top-bar-content">
-            <div class="logo-container">
-                <a href="index.html" class="logo">Nebulapp</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Documentation</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="eula.html">EULA</a></li>
-                    <li><a href="security.html">Security</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
 
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Display issue's assignee history at a glance</h1>
-            <p><img style="width: 100%;height: 100%;object-fit: cover;" src="AssigneeHistoryScreenShot-v3.PNG" alt="Assignee History UI"></p>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#0052CC"/>
+                    <path d="M2 17L12 22L22 17" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Nebulapp</span>
+            </a>
         </div>
-    </div>
+        <button class="menu-toggle" aria-label="Open Menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <!-- Uses JS to center align -->
+                <li><a href="#apps-section" onclick="event.preventDefault(); scrollToCenter('apps-section')">Apps</a></li>
+                <li><a href="docs/assignee-history.html">Docs</a></li>
+                <li><a href="https://nebulapp.atlassian.net/servicedesk/customer/portal/1" target="_blank">Support</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <article>
-            <h2>Details</h2>
-            <p>
-                Assignee History fetches information directly from the issue history, delivering only assignation-related items to a dedicated location on the issue page. With just a glance, you can see exactly who has been assigned and when, all conveniently displayed from the most recent to the oldest assignment.
-            </p>
-            <p>
-                Designed with efficiency in mind, our app caters to users who demand quick access to critical information without the hassle of navigating through cluttered histories. Whether you're a project manager, developer, or team member, Assignee History ensures that you stay focused on what matters most – getting the job done.
-            </p>
-
-            <div class="meta">
-                Last updated: November 23, 2024
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <h1>Extending Jira <br> with Cloud-Forge Apps</h1>
+                <p>We build scalable, and intuitive apps for the Atlassian ecosystem using the power of Forge.</p>
+                <div class="hero-buttons">
+                    <!-- Uses JS to center align -->
+                    <a href="#apps-section" onclick="event.preventDefault(); scrollToCenter('apps-section')" class="btn">Explore Apps</a>
+                    <a href="https://nebulapp.atlassian.net/servicedesk/customer/portal/1" target="_blank" class="btn btn-outline">Get Support</a>
+                </div>
             </div>
-        </article>
+        </section>
+
+        <!-- Why Us -->
+        <section class="container" style="padding: 4rem 1.5rem; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Why Nebulapp?</h2>
+            <p style="color: var(--text-light); max-width: 700px; margin: 0 auto;">
+                We specialize in <strong>Atlassian Forge</strong> development, creating apps designed to boost team productivity.
+            </p>
+        </section>
+
+        <!-- Apps Grid -->
+        <section id="apps-section" class="apps-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Apps</h2>
+                    <p>Tools tailored to improve your team's productivity.</p>
+                </div>
+                <div class="app-grid">
+                    <div class="app-card">
+                        <div class="app-icon"><img src="assets/assignee-history-icon.png" alt="Assignee History logo" loading="lazy" width="64" height="64"/></div>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                            <h3>Assignee History</h3>
+                            <span style="font-size: 0.75rem; background:#DFE1E6; padding:2px 6px; border-radius:3px; font-weight:600;">Jira Cloud</span>
+                        </div>
+                        <p>Keep track of every user assigned to a ticket. View avatars, names, and assignment dates instantly in a dedicated issue panel.</p>
+                        <div class="app-actions">
+                            <a href="https://marketplace.atlassian.com/apps/1233761/assignee-history" target="_blank" class="btn btn-small">Get on Marketplace</a>
+                            <a href="docs/assignee-history.html" class="btn btn-small" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-dark);">Docs</a>
+                        </div>
+                    </div>
+                    <div class="app-card" style="opacity: 0.7; border-style: dashed;">
+                        <div class="app-icon">🚀</div>
+                        <h3>Coming Soon</h3>
+                        <p>We are currently developing new tools to help you manage filters. Stay tuned.</p>
+                        <div class="app-actions">
+                            <span style="color: var(--text-light); font-size: 0.9rem; font-style: italic;">In development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
-        <p>© 2024 Nebulapp. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-links">
+                <!-- Links now point to the folder -->
+                <a href="legal/privacy.html">Privacy Policy</a>
+                <a href="legal/eula.html">EULA</a>
+                <a href="legal/security.html">Security</a>
+                <a href="https://nebulapp.atlassian.net/servicedesk/customer/portal/1" target="_blank">Support</a>
+            </div>
+            <p>&copy; 2025 Nebulapp. All rights reserved.</p>
+        </div>
     </footer>
+    
+    <script src="js/main.js"></script>
 </body>
 </html>

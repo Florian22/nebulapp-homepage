@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Statement | Nebulapp</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/nebulapp-logo.svg"> 
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+<header>
+        <div class="logo">
+            <a href="index.html">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#0052CC"/>
+                    <path d="M2 17L12 22L22 17" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Nebulapp</span>
+            </a>
+        </div>
+        <button class="menu-toggle" aria-label="Open Menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <!-- Uses JS to center align -->
+                <li><a href="#apps-section" onclick="event.preventDefault(); scrollToCenter('apps-section')">Apps</a></li>
+                <li><a href="docs/assignee-history.html">Docs</a></li>
+                <li><a href="https://nebulapp.atlassian.net/servicedesk/customer/portal/1" target="_blank">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="doc-container">
+        <!-- SIDEBAR -->
+        <aside class="doc-sidebar">
+            <a href="../index.html" class="back-link">← Back to Home</a>
+            <h3>Legal Documents</h3>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="eula.html">EULA</a></li>
+                <!-- Active Link Style -->
+                <li><a href="security.html" style="font-weight: 700; color: var(--primary-color);">Security</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="doc-content">
+            <div class="doc-header">
+                <h1>Security Statement</h1>
+                <p class="lead">Our commitment to protecting your data.</p>
+            </div>
+
+            <section class="doc-section">
+                <p>Nebulapp is dedicated to safeguarding the privacy and security of our users' information. We operate in alignment with Atlassian's Shared Security Responsibility Model to ensure robust protection and security measures for customer data. Our commitment extends to adhering to Atlassian's Marketplace App Trust requirements.</p>
+            </section>
+
+            <section class="doc-section">
+                <h2>Built on Atlassian Forge</h2>
+                <p>Nebulapp's Jira Cloud plugins available on the Atlassian Marketplace have been implemented on <strong>Atlassian Forge</strong>. This implies operating on Atlassian's servers and adhering to their stringent security standards.</p>
+            </section>
+
+            <section class="doc-section">
+                <h2>Shared Responsibility</h2>
+                <p>We recommend referring to Atlassian's official documentation on Cloud Security Shared Responsibilities for detailed insights into this collaborative effort.</p>
+                <a href="https://www.atlassian.com/whitepapers/cloud-security-shared-responsibilities" target="_blank" class="btn-outline" style="display:inline-block; padding: 8px 16px; border-radius:4px; font-size: 0.9rem; margin-top: 10px;">View Shared Responsibility Model</a>
+            </section>
+
+            <section class="doc-section">
+                <h2>Forge Platform Security</h2>
+                <p>For a deeper understanding of the security aspects related to Atlassian Forge, we encourage users to explore the resources available on Atlassian's developer platform.</p>
+                <p>You can access more information on Forge security by <a href="https://developer.atlassian.com/platform/forge/security/" target="_blank" style="color: var(--primary-color); text-decoration: underline;">visiting this link</a>.</p>
+            </section>
+
+            <section class="doc-section">
+                <h2>Our Commitment</h2>
+                <p>Nebulapp remains committed to maintaining the highest standards of security for our products and services. We understand the critical importance of safeguarding customer data and will continue to collaborate with Atlassian and adhere to industry best practices to ensure a secure environment for our users.</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="eula.html">EULA</a>
+                <a href="security.html">Security</a>
+                <a href="https://nebulapp.atlassian.net/servicedesk/customer/portal/1" target="_blank">Support</a>
+            </div>
+            <p>&copy; 2025 Nebulapp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

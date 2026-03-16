@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignee History Docs | Nebulapp</title>
     <!-- Note: CSS path uses ../ -->
-    <link rel="icon" type="image/svg+xml" href="../assets/nebulapp-logo.svg"> 
+    <link rel="icon" type="image/png" href="../assets/favicon-logo.png">
     <link rel="stylesheet" href="../css/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QL589S3CSD"></script>
@@ -23,11 +23,7 @@
         <div class="logo">
             <!-- Link goes up one level -->
             <a href="../index.html">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#0052CC"/>
-                    <path d="M2 17L12 22L22 17" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2 12L12 17L22 12" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <img src="../assets/icon-logo.png" alt="Nebulapp" width="24" height="24">
                 <span>Nebulapp</span>
             </a>
         </div>
@@ -54,8 +50,11 @@
             <ul>
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="#features">Key Features</a></li>
+                <li><a href="#scopes">Required Scopes</a></li>
                 <li><a href="#install">Installation</a></li>
                 <li><a href="#usage">How to Use</a></li>
+                <li><a href="#licensing">Licensing</a></li>
+                <li><a href="#support">Support</a></li>
             </ul>
         </aside>
 
@@ -70,36 +69,98 @@
 
             <section id="overview" class="doc-section">
                 <h2>Overview</h2>
-                <p><strong>Assignee History</strong> is an intuitive Jira Cloud app that keeps track of every user assigned to a ticket. Standard Jira history is often cluttered with field updates, transitions, and comments, making it difficult to see <em>who</em> worked on a ticket and <em>when</em>.</p>
+                <p><strong>Assignee History</strong> is an intuitive Jira Cloud app that keeps track of every user assigned to a ticket. Standard Jira history is often cluttered with field updates, transitions, and comments, making it difficult to see <em>who</em> worked on a ticket and <em>when</em>. This app provides a clean, dedicated panel that shows only the assignee changes — with user avatars, display names, and precise timestamps — so you can instantly trace a ticket's ownership journey.</p>
             </section>
 
             <section id="features" class="doc-section">
                 <h2>Key Features</h2>
+
+                <h3 style="margin-top: 2rem;">1. Visual Assignee Timeline</h3>
+                <p>See a clear, reverse-chronological list of every person who was assigned to an issue. Each entry displays the user's <strong>avatar</strong>, <strong>display name</strong>, and the exact <strong>date & time</strong> they were assigned — no more digging through noisy activity feeds.</p>
+
+                <h3 style="margin-top: 2rem;">2. Searchable History</h3>
+                <p>On issues with a long history, use the built-in <strong>search bar</strong> to instantly find whether a specific person was ever assigned to the ticket. Just start typing a name and the list filters in real time.</p>
+
+                <h3 style="margin-top: 2rem;">3. Per-Project Enable/Disable</h3>
+                <p>Assignee History can be enabled or disabled on a per-project basis through the <strong>Project Settings</strong> page. This gives project administrators full control over which projects display the panel, keeping things clean for teams that don't need it.</p>
+
+                <h3 style="margin-top: 2rem;">4. Graceful Handling of Edge Cases</h3>
+                <p>The app intelligently handles common scenarios:</p>
                 <ul>
-                    <li><strong>Visual History:</strong> See user avatars and display names for instant recognition.</li>
-                    <li><strong>Timestamps:</strong> Know exactly when a user was assigned to the issue.</li>
-                    <li><strong>Searchable:</strong> Built-in search bar to find if a specific person ever worked on the ticket.</li>
+                    <li><strong>Unassigned:</strong> If a ticket was unassigned at any point, the entry clearly shows "Unassigned" in the timeline.</li>
+                    <li><strong>Former Users:</strong> If a user account has been deleted or deactivated, the entry displays "Former User" instead of breaking.</li>
+                    <li><strong>No Reassignments:</strong> If the issue has never been reassigned, a friendly message is shown: <em>"The issue has not been re-assigned yet."</em></li>
                 </ul>
+
+                <h3 style="margin-top: 2rem;">5. Dark Mode Support</h3>
+                <p>The app fully supports Jira's dark theme, automatically adapting its appearance to match your current Jira color scheme for a seamless experience.</p>
+            </section>
+
+            <section id="scopes" class="doc-section">
+                <h2>Required Scopes & Data Usage</h2>
+                <p>Assignee History requires a minimal set of permissions to function. We strictly follow the principle of least privilege. <strong>No data is stored by the app</strong> — all information is read directly from Jira's native changelog API at display time.</p>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;" border="1">
+                    <thead>
+                        <tr style="background: var(--bg-light); text-align: left;">
+                            <th style="padding: 10px; border: 1px solid var(--border-color);">Scope</th>
+                            <th style="padding: 10px; border: 1px solid var(--border-color);">Why It Is Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid var(--border-color);"><code>read:jira-work</code></td>
+                            <td style="padding: 10px; border: 1px solid var(--border-color);">Allows the app to read the issue changelog to extract assignee change events and their timestamps.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid var(--border-color);"><code>read:jira-user</code></td>
+                            <td style="padding: 10px; border: 1px solid var(--border-color);">Required to fetch user display names and avatars for each assignee entry in the history.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid var(--border-color);"><code>read:project.property:jira</code></td>
+                            <td style="padding: 10px; border: 1px solid var(--border-color);">Required to read the per-project enable/disable setting so the app knows whether to display the panel.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid var(--border-color);"><code>write:project.property:jira</code></td>
+                            <td style="padding: 10px; border: 1px solid var(--border-color);">Required to save the per-project enable/disable toggle when a project administrator changes the setting.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
             <section id="install" class="doc-section">
                 <h2>Installation</h2>
+                <div style="margin-bottom: 1.5rem; margin-top: 1rem;">
+                    <a href="https://marketplace.atlassian.com/apps/1233498" class="btn" style="background: var(--primary-color); color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;">Get it on Atlassian Marketplace</a>
+                </div>
+                <p>Alternatively, you can install it directly from your Jira instance:</p>
                 <ol>
                     <li>Log into your Jira instance as an administrator.</li>
                     <li>Go to <strong>Apps > Find new apps</strong>.</li>
                     <li>Search for "Assignee History".</li>
-                    <li>Click <strong>Try it free</strong> to install.</li>
+                    <li>Click <strong>Try it free</strong> to install. Accept the required scopes.</li>
                 </ol>
             </section>
 
             <section id="usage" class="doc-section">
                 <h2>How to Use</h2>
-                <p>Once installed, the app works automatically. No configuration is required.</p>
+                <p>Once installed, the app works automatically — no complex configuration required.</p>
                 <ol>
-                    <li>Open any Jira Issue (Bug, Story, Task, etc.).</li>
-                    <li>Look for the button <strong>Assignee History</strong> in the issue activity or sidebar panel area.</li>
-                    <li>Clicking it will load the history list.</li>
+                    <li>Navigate to your project's <strong>Project Settings > Assignee History Settings</strong> and <strong>enable</strong> the app for that project.</li>
+                    <li>Open any Jira issue (Bug, Story, Task, etc.) within that project.</li>
+                    <li>Look for the <strong>Assignee History</strong> panel in the issue context area.</li>
+                    <li>The full assignee timeline loads automatically. Use the search bar to filter by name if needed.</li>
                 </ol>
+            </section>
+
+            <section id="licensing" class="doc-section">
+                <h2>Licensing</h2>
+                <p>Assignee History is a commercial app available on the Atlassian Marketplace. It provides a full-featured free trial period, after which an active license is required for continuous use. You can manage your subscription directly from your Jira administration settings.</p>
+            </section>
+
+            <section id="support" class="doc-section" style="background: #E6EFFC; padding: 2rem; border-radius: 8px; margin-top: 3rem; text-align: center;">
+                <h2>Need Help?</h2>
+                <p style="margin-bottom: 1.5rem;">Encountering issues, have a question, or want to request a feature? Reach out to our support team and we'll be happy to assist you.</p>
+                <a href="https://nebulapp.atlassian.net/servicedesk/customer/portal/1" target="_blank" class="btn" style="background: var(--primary-color); color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;">Contact Support →</a>
             </section>
         </main>
     </div>

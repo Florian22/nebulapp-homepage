@@ -79,7 +79,7 @@
                 <h2>Key Features & Usage</h2>
 
                 <h3 style="margin-top: 2rem;">1. Bulk Operations</h3>
-                <p>Select multiple filters at once to perform mass updates, saving you clicks and time. Through the bulk actions menu, you can bulk-update tags, bulk-share, bulk-remove access, and bulk-change owners across dozens of filters simultaneously.</p>
+                <p>Select multiple filters at once to perform mass updates, saving you clicks and time. Through the bulk actions menu, you can bulk-update tags, bulk-share, bulk-remove access, and bulk-change owners across dozens of filters simultaneously. You can also <strong>create new tags</strong> directly from the bulk edit modal — just type a new tag name and it will be created on the fly.</p>
                 <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
                     <img src="../assets/select+bulk-operation.png" alt="Filters selected via checkboxes with bulk actions menu open" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
                 </div>
@@ -109,7 +109,7 @@
                 <p>Beyond bulk changes, the main dashboard provides essential capabilities for everyday filter management:</p>
                 <ul>
                     <li><strong>Favorites:</strong> Individually manage whether a filter is marked as a 'favorite' right from the main list view.</li>
-                    <li><strong>Advanced Filters:</strong> Find exactly what you need by filtering the dashboard based on <strong>filter name</strong>, <strong>owner</strong>, <strong>tags</strong>, or by toggling to only show <strong>filters you can edit</strong>.</li>
+                    <li><strong>Advanced Filters:</strong> Find exactly what you need by filtering the dashboard based on <strong>filter name</strong>, <strong>owner</strong>, or <strong>tags</strong>.</li>
                 </ul>
                 <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
                     <img src="../assets/filtering.png" alt="Dashboard search area with favorite star, filter controls, and tag filtering" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
@@ -156,9 +156,8 @@
                 <p>To guarantee maximum performance and stability within Atlassian's strictly partitioned Forge ecosystem, we enforce sensible bounds on certain features:</p>
                 <ul>
                     <li><strong>Filtering by Permission:</strong> The app only displays filters that you have permission to view or edit. If a colleague created a totally private filter, it will not appear for you, even if you are a Jira Admin (this is an underlying Jira REST API constraint).</li>
-                    <li><strong>Tag Limits:</strong> A maximum of <strong>15 tags</strong> can be assigned per filter, and each tag is limited to <strong>50 characters</strong> (alphanumeric, hyphens, and underscores only). This prevents UI clutter and ensures the tag-search engine remains lightning fast.</li>
+                    <li><strong>Tag Limits:</strong> A maximum of <strong>15 tags</strong> can be assigned per filter, and each tag is limited to <strong>50 characters</strong> (alphanumeric, hyphens, and underscores only). This prevents UI clutter and ensures the tag-search engine remains lightning fast. If a bulk operation attempts to add tags beyond the 15-tag limit, extra tags are automatically truncated and a <strong>warning</strong> is displayed in the results summary.</li>
                     <li><strong>Tag Search Limits:</strong> When searching by tags, a strict safety cap is placed at a maximum of 500 filter results. This is a hard limit (not paginated) designed to ensure the app complies with Atlassian Forge's strict 25-second backend execution timeouts and to prevent browser memory exhaustion. If you have more than 500 filters with the same tag, only the first 500 accessible ones will be returned.</li>
-                    <li><strong>Editable Only Filter Limit:</strong> When the <strong>"Editable only"</strong> toggle is enabled, the app scans up to <strong>10,000 filters</strong> to identify those you have edit permission on. If your instance has more than 10,000 filters visible to you, results are truncated and an informational banner is displayed: <em>"Showing the first 10,000 editable filters. Use search or tag filters to narrow your results."</em> This primarily affects Jira administrators on very large instances, as regular users typically see far fewer filters. This limit exists because Jira's API does not support filtering by edit permission server-side — the app must check each filter individually, and Atlassian Forge enforces a 25-second execution timeout per request. Normal paginated browsing, search by name or owner, and other features are <strong>not affected</strong> by this limit.</li>
                     <li><strong>Bulk Edit Thresholds:</strong> Bulk operations are capped at <strong>1,000 filters</strong> per action. Additionally, to respect Jira's strict REST API rate limits and avoid overwhelming your instance, bulk actions are processed in small batches. Wait times for massive bulk edits (e.g., hundreds of filters) may be longer.</li>
                 </ul>
             </section>

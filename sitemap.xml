@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://nebulapp.ca/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://nebulapp.ca/docs/advanced-filter-manager.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nebulapp.ca/docs/assignee-history.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nebulapp.ca/legal/privacy.html</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://nebulapp.ca/legal/eula.html</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://nebulapp.ca/legal/security.html</loc>
+    <priority>0.4</priority>
+  </url>
+</urlset>

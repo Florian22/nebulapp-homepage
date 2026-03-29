@@ -13,6 +13,7 @@
     <meta property="og:url" content="https://nebulapp.ca/">
     <meta property="og:image" content="https://nebulapp.ca/assets/icon-logo.png">
     <meta property="og:site_name" content="Nebulapp">
+    <meta property="og:locale" content="en_US">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Nebulapp – Secure Jira Cloud Apps Built on Atlassian Forge">
@@ -28,6 +29,20 @@
         gtag('js', new Date());
 
         gtag('config', 'G-QL589S3CSD');
+    </script>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Nebulapp",
+        "url": "https://nebulapp.ca",
+        "logo": "https://nebulapp.ca/assets/icon-logo.png",
+        "description": "Nebulapp builds secure, cloud-native Jira apps using Atlassian Forge.",
+        "sameAs": [
+            "https://www.linkedin.com/company/nebulapp"
+        ]
+    }
     </script>
 </head>
 <body>
@@ -63,7 +78,7 @@
                 <div class="hero-buttons">
                     <!-- Uses JS to center align -->
                     <a href="#apps-section" onclick="event.preventDefault(); scrollToCenter('apps-section')" class="btn">Explore Apps</a>
-                    <a href="https://nebulapp.atlassian.net/servicedesk/customer/portal/1" target="_blank" class="btn btn-outline">Get Support</a>
+                    <a href="https://nebulapp.atlassian.net/servicedesk/customer/portal/1" target="_blank" class="btn btn-outline" onclick="gtag('event','click',{event_category:'CTA',event_label:'Support - Homepage Hero'});">Get Support</a>
                 </div>
             </div>
         </section>
@@ -92,8 +107,8 @@
                         </div>
                         <p>Keep track of every user assigned to a ticket. View avatars, names, and assignment dates instantly in a dedicated issue panel.</p>
                         <div class="app-actions">
-                            <a href="https://marketplace.atlassian.com/apps/1233761/assignee-history" target="_blank" class="btn btn-small">Get on Marketplace</a>
-                            <a href="docs/assignee-history.html" class="btn btn-small" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-dark);">Docs</a>
+                            <a href="https://marketplace.atlassian.com/apps/1233761/assignee-history" target="_blank" class="btn btn-small" onclick="gtag('event','click',{event_category:'CTA',event_label:'Marketplace - Assignee History'});">Get on Marketplace</a>
+                            <a href="docs/assignee-history.html" class="btn btn-small" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-dark);" onclick="gtag('event','click',{event_category:'CTA',event_label:'Docs - Assignee History'});">Docs</a>
                         </div>
                     </div>
                     <div class="app-card">
@@ -105,7 +120,7 @@
                         <p>Take control of your Jira filters with powerful management tools. Organize, share, and maintain filters effortlessly across your JIRA site.</p>
                         <div class="app-actions">
                             <span class="btn btn-small" style="background-color: var(--border-color); color: var(--text-light); cursor: default;">Coming Soon</span>
-                            <a href="docs/advanced-filter-manager.html" class="btn btn-small" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-dark);">Docs</a>
+                            <a href="docs/advanced-filter-manager.html" class="btn btn-small" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-dark);" onclick="gtag('event','click',{event_category:'CTA',event_label:'Docs - Advanced Filter Manager'});">Docs</a>
                         </div>
                     </div>
                     <!-- Do Not delete - placeholder for future apps
@@ -135,7 +150,7 @@
                 <a href="https://nebulapp.atlassian.net/servicedesk/customer/portal/1" target="_blank">Support</a>
                 <a href="https://www.linkedin.com/company/nebulapp" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
-            <p>&copy; 2025 Nebulapp. All rights reserved.</p>
+            <p>&copy; 2026 Nebulapp. All rights reserved.</p>
         </div>
     </footer>
     

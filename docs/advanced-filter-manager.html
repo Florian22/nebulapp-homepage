@@ -209,18 +209,65 @@
                 </table>
             </section>
 
-            <section id="limitations" class="doc-section">
-                <h2>Technical Limitations</h2>
-                <p>To guarantee maximum performance and stability within Atlassian's strictly partitioned Forge ecosystem, we enforce sensible bounds on certain features:</p>
-                <ul>
-                    <li><strong>Filtering by Permission:</strong> The app lists only the filters you are allowed to see in Jira. Filters you can view but not edit are still shown, but they cannot be selected for changes.</li>
-                    <li><strong>Organization-shared filters:</strong> If a filter is shared with your entire organization, Jira does not allow adding more specific permissions (users, groups, or space roles) on top of it. The app detects this and warns you before saving &mdash; set the filter to <strong>private</strong> first, then add the specific permissions you need.</li>
-                    <li><strong>Tag Limits:</strong> A maximum of <strong>15 tags</strong> can be assigned per filter, and each tag is limited to <strong>50 characters</strong> (alphanumeric, hyphens, and underscores only). This prevents UI clutter and ensures the tag-search engine remains lightning fast. If a bulk operation attempts to add tags beyond the 15-tag limit, extra tags are automatically truncated and a <strong>warning</strong> is displayed in the results summary.</li>
-                    <li><strong>Tag Search Limits:</strong> When searching by tags, a strict safety cap is placed at a maximum of 500 filter results. This is a hard limit (not paginated) designed to ensure the app complies with Atlassian Forge's strict 25-second backend execution timeouts and to prevent browser memory exhaustion. If you have more than 500 filters with the same tag, only the first 500 accessible ones will be returned.</li>
-                    <li><strong>Search Results Cap:</strong> When searching filters by name or owner, the app displays a maximum of <strong>1,000 results</strong>. If more matches exist, a warning banner will appear advising you to refine your search. This cap keeps the interface responsive and avoids loading excessively large result sets. The main (non-search) filter list is unaffected and can be browsed in full.</li>
-                    <li><strong>Tag Limit:</strong> There is a soft limit of <strong>2,000 unique tags</strong> per Jira instance. If you approach this limit, you may need to reduce the number of unique tags to ensure continued performance and reliability.</li>
-                </ul>
-            </section>
+            
+<section id="limitations" class="doc-section">
+    <h2>Technical Limitations</h2>
+    <p>Advanced Filter Manager is designed to work efficiently, even on large Jira instances. There are a few limits worth knowing about:</p>
+    <ul>
+        <li>
+            <strong>Filter Permissions:</strong>
+            You can only see filters that you have access to in Jira.
+            Filters you can view but don't have permission to edit will
+            still appear in the list, but you won't be able to select
+            them for bulk changes.
+        </li>
+        <li>
+            <strong>Organization-shared Filters:</strong>
+            Jira doesn't allow you to add specific sharing permissions
+            (such as individual users, groups, or project roles) to a
+            filter that's already shared with your entire organization.
+            If you try to do this, the app will let you know before
+            saving. To add more specific permissions, first make the
+            filter <strong>private</strong>, then configure the
+            sharing permissions you need.
+        </li>
+        <li>
+            <strong>Tags per Filter:</strong>
+            Each filter can have up to <strong>15 tags</strong>, with
+            a maximum of <strong>50 characters</strong> per tag.
+            Tags can contain letters, numbers, hyphens, and underscores.
+            If a bulk update would exceed the 15-tag limit, the extra
+            tags are skipped and a <strong>warning</strong> appears
+            in the results summary.
+        </li>
+        <li>
+            <strong>Searching by Tag:</strong>
+            Tag searches return up to <strong>500 filters</strong>.
+            If more than 500 accessible filters match your search,
+            only the first 500 will be shown. This limit helps keep
+            searches fast and reliable, especially on larger Jira
+            instances.
+        </li>
+        <li>
+            <strong>Searching by Name or Owner:</strong>
+            Searches by filter name or owner return up to
+            <strong>1,000 results</strong>. If there are more matches,
+            you'll see a message asking you to narrow your search.
+            This limit only applies to search results &mdash; you can
+            still browse the full filter list normally.
+        </li>
+        <li>
+            <strong>Unique Tags:</strong>
+            A Jira instance can have approximately
+            <strong>2,000 unique tags</strong>.
+            This is a soft limit rather than a strict restriction.
+            If you're getting close to it, consider reusing existing
+            tags or cleaning up ones you no longer need to keep
+            everything running smoothly.
+        </li>
+    </ul>
+</section>
+
 
             <section id="install" class="doc-section">
                 <h2>Installation</h2>

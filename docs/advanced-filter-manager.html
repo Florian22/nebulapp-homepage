@@ -180,7 +180,7 @@
                 <p>Stop relying on awkward naming conventions to group your filters. Add custom tags directly to any filters you have permission to edit to create intuitive categories (e.g., <em>"q3-okrs"</em>, <em>"frontend-bugs"</em>).</p>
                 <ul>
                     <li>Add, remove, or create new tags <strong>inline</strong> on individual filters, or efficiently through <strong>bulk operations</strong>.</li>
-                    <li><strong>Reuse any tag in use across your site.</strong> Tag suggestions are shared across your whole Jira instance &mdash; just like Jira labels &mdash; so you can pick an existing tag without retyping it, and tags that are no longer used anywhere drop out of the list automatically.</li>
+                    <li><strong>Reuse tags across your site.</strong> Tag suggestions are shared across your Jira instance, much like Jira labels. Pick an existing tag instead of retyping it. Tags that are no longer in use disappear from the list automatically.</li>
                     <li>Easily filter your filters by one or multiple tags (a filter must match <em>all</em> of the selected tags).</li>
                 </ul>
                 <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
@@ -193,8 +193,8 @@
                 <h3 id="feature-sharing-permissions" style="margin-top: 2rem;">4. Sharing &amp; Permissions Management</h3>
                 <p>Quickly view who has access to which filters. Make a filter private, or share it with specific <strong>Users</strong>, <strong>Groups</strong>, <strong>Spaces</strong>, <strong>Space Roles</strong>, or your entire <strong>Organization</strong>.</p>
                 <ul>
-                    <li><strong>Space roles:</strong> you can share with any space role you belong to &mdash; directly or through a group. The app offers only the roles you are a member of, so you never pick an option that Jira will reject when saving.</li>
-                    <li><strong>Preflight checks:</strong> before a bulk update runs, the app flags the filters that are likely to fail &mdash; for example, filters already shared with your whole organization, or ones referencing spaces or roles that no longer exist &mdash; so you can review them and exclude them from the batch.</li>
+                    <li><strong>Space roles:</strong> You can share with any space role you belong to, either directly or through a group. The app only shows roles you belong to, so it won't offer an option Jira will reject when you save.</li>
+                    <li><strong>Preflight checks:</strong> Before a bulk update, the app flags filters that may fail. This includes filters shared with your whole organization and filters that refer to spaces or roles that no longer exist. Review these filters and remove them from the batch if needed.</li>
                 </ul>
                 <p><em>Note: This action is executed via <strong>bulk operations</strong> and strictly respects Jira user permissions (you can only update sharing settings on filters you have permission to edit).</em></p>
                 <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
@@ -209,8 +209,8 @@
                 <h3 id="feature-orphaned-filters" style="margin-top: 2rem;">6. Find Orphaned &amp; Inactive-Owner Filters</h3>
                 <p>Filters owned by people who have left the company quickly turn into invisible maintenance debt. The <strong>Owner status</strong> filter surfaces them for you:</p>
                 <ul>
-                    <li><strong>Any inactive owner</strong> &mdash; filters whose owner's account has been deactivated.</li>
-                  <!--  <li><strong>Deleted owner</strong> &mdash; filters whose owner has been removed from Jira (shown as <em>"Former user"</em>).</li> -->
+                                        <li><strong>Any inactive owner:</strong> filters whose owner's account has been deactivated.</li>
+                                    <!--  <li><strong>Deleted owner:</strong> filters whose owner has been removed from Jira (shown as <em>"Former user"</em>).</li> -->
                 </ul>
                 <p>Combine this with the name or tag filters, then transfer ownership in bulk so those filters keep working for the team.</p>
                 <p>When you find a filter owned by an inactive user, open the <a href="#filter-details-panel">Filter Details Panel</a> to check its JQL and sharing permissions before deciding whether to transfer ownership.</p>
@@ -310,8 +310,8 @@
             Searches by filter name or owner return up to
             <strong>1,000 results</strong>. If there are more matches,
             you'll see a message asking you to narrow your search.
-            This limit only applies to search results &mdash; you can
-            still browse the full filter list normally.
+            This limit only applies to search results. You can still
+            browse the full filter list normally.
         </li>
         <li>
             <strong>Unique Tags:</strong>

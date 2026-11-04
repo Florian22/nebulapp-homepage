@@ -87,8 +87,18 @@
             <h3 style="margin-top: 1.5rem;">Contents</h3>
             <ul>
                 <li><a href="#overview">Overview</a></li>
-                <li><a href="#features">Key Features</a></li>
-                <li style="margin-left: 1rem;"><a href="#filter-details-panel">Filter Details Panel</a></li>
+                <li>
+                    <a href="#features">Key Features</a>
+                    <ul style="margin-left: 1rem;">
+                        <li><a href="#feature-bulk-operations">Bulk Operations</a></li>
+                        <li><a href="#filter-details-panel">Filter Details Panel</a></li>
+                        <li><a href="#feature-filter-tagging">Filter Tagging</a></li>
+                        <li><a href="#feature-sharing-permissions">Sharing &amp; Permissions Management</a></li>
+                        <li><a href="#feature-change-ownership">Change Ownership</a></li>
+                        <li><a href="#feature-orphaned-filters">Find Orphaned &amp; Inactive-Owner Filters</a></li>
+                        <li><a href="#feature-favorites-search">Manage Favorites &amp; Advanced Searching</a></li>
+                    </ul>
+                </li>
                 <li><a href="#scopes">Required Scopes</a></li>
                 <li><a href="#limitations">Limitations</a></li>
                 <li><a href="#install">Installation</a></li>
@@ -120,7 +130,7 @@
             <section id="features" class="doc-section">
                 <h2>Key Features & Usage</h2>
 
-                <h3 style="margin-top: 2rem;">1. Bulk Operations</h3>
+                <h3 id="feature-bulk-operations" style="margin-top: 2rem;">1. Bulk Operations</h3>
                 <p>Select multiple filters at once to perform mass updates, saving you clicks and time. Through the bulk actions menu, you can bulk-update tags, bulk-share and bulk-change owners across dozens of filters simultaneously.</p>
                 <p>Need to inspect a filter before making changes? Use the <a href="#filter-details-panel">Filter Details Panel</a> to review its JQL, ownership, and permissions without losing your current selection.</p>
                 <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
@@ -164,7 +174,7 @@
                 <h4>Read-only and access</h4>
                 <p>The panel is for inspection only. You can't edit JQL, descriptions, filter names, permissions, or tags there. Use the app's existing management controls or Jira to make changes. Jira access controls determine which filters you can see; an accessible filter can be available in the panel even when its bulk-selection checkbox is disabled because you can't edit it.</p>
 
-                <h3 style="margin-top: 2rem;">3. Filter Tagging</h3>
+                <h3 id="feature-filter-tagging" style="margin-top: 2rem;">3. Filter Tagging</h3>
                 <p>Stop relying on awkward naming conventions to group your filters. Add custom tags directly to any filters you have permission to edit to create intuitive categories (e.g., <em>"q3-okrs"</em>, <em>"frontend-bugs"</em>).</p>
                 <ul>
                     <li>Add, remove, or create new tags <strong>inline</strong> on individual filters, or efficiently through <strong>bulk operations</strong>.</li>
@@ -178,7 +188,7 @@
                     <img src="../assets/tag-suggestions.png" alt="Filter by Tags dropdown suggesting tags shared across the Jira instance" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
                 </div>
 
-                <h3 style="margin-top: 2rem;">4. Sharing & Permissions Management</h3>
+                <h3 id="feature-sharing-permissions" style="margin-top: 2rem;">4. Sharing &amp; Permissions Management</h3>
                 <p>Quickly view who has access to which filters. Make a filter private, or share it with specific <strong>Users</strong>, <strong>Groups</strong>, <strong>Spaces</strong>, <strong>Space Roles</strong>, or your entire <strong>Organization</strong>.</p>
                 <ul>
                     <li><strong>Space roles:</strong> you can share with any space role you belong to &mdash; directly or through a group. The app offers only the roles you are a member of, so you never pick an option that Jira will reject when saving.</li>
@@ -191,10 +201,10 @@
                 <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
                     <img src="../assets/bulk-permission-completed.png" alt="Bulk operation completed after changing Jira filter ownership" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
                 </div>
-                <h3 style="margin-top: 2rem;">5. Change Ownership</h3>
+                <h3 id="feature-change-ownership" style="margin-top: 2rem;">5. Change Ownership</h3>
                 <p>When colleagues move teams or leave the company, their important filters often get stuck or orphaned. Advanced Filter Manager allows you to easily transfer ownership of filters to another team member to ensure continuous maintenance. <br><em>Note: This action is executed via <strong>bulk operations</strong> and strictly respects Jira user permissions.</em></p>
 
-                <h3 style="margin-top: 2rem;">6. Find Orphaned &amp; Inactive-Owner Filters</h3>
+                <h3 id="feature-orphaned-filters" style="margin-top: 2rem;">6. Find Orphaned &amp; Inactive-Owner Filters</h3>
                 <p>Filters owned by people who have left the company quickly turn into invisible maintenance debt. The <strong>Owner status</strong> filter surfaces them for you:</p>
                 <ul>
                     <li><strong>Any inactive owner</strong> &mdash; filters whose owner's account has been deactivated.</li>
@@ -206,7 +216,7 @@
                     <img src="../assets/owner-status-filter.png" alt="Filter by Owner dropdown showing the Owner status options" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
                 </div>
 
-                <h3 style="margin-top: 2rem;">7. Manage Favorites & Advanced Searching</h3>
+                <h3 id="feature-favorites-search" style="margin-top: 2rem;">7. Manage Favorites &amp; Advanced Searching</h3>
                 <p>Beyond bulk changes, the main app provides essential capabilities for everyday filter management:</p>
                 <ul>
                     <li><strong>Favorites:</strong> Individually manage whether a filter is marked as a 'favorite' right from the main list view.</li>

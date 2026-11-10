@@ -228,6 +228,7 @@
                 <ul>
                     <li><strong>Favorites:</strong> Individually manage whether a filter is marked as a 'favorite' right from the main list view.</li>
                     <li><strong>Advanced Filters:</strong> Find exactly what you need by filtering the filter list based on <strong>filter name</strong>, <strong>owner</strong>, or <strong>tags</strong>.</li>
+                    <li><strong>Faster tag and owner searches:</strong> <span class="doc-tag">New in 3.0.0</span> On large lists, tag and owner searches check candidates without loading the full details of every matching filter — only the filters on the page you're viewing are loaded in full.</li>
                 </ul>
                 <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
                     <img src="../assets/filtering.png" alt="Filter list search area with favorite star, Jira filter controls, and tag filtering" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
@@ -293,7 +294,11 @@
             permission to see. If your site doesn't use
             Jira Software, or the board scope hasn't been
             approved yet, the section is hidden instead of
-            showing an error.
+            showing an error. If loading the boards for one
+            filter fails, the section stays in place and shows
+            "We couldn't load the boards" with a
+            <strong>Try again</strong> button to reload just
+            that filter's boards. <span class="doc-tag">New in 3.0.0</span>
         </li>
         <li>
             <strong>Organization-shared Filters:</strong>
@@ -329,6 +334,14 @@
             you'll see a message asking you to narrow your search.
             This limit only applies to search results. You can still
             browse the full filter list normally.
+        </li>
+        <li>
+            <strong>Incomplete search results:</strong>
+            <span class="doc-tag">New in 3.0.0</span>
+            If a tag or owner search can't fully check every
+            candidate, the app shows a warning — "Some results
+            could not be checked" — and the list may be
+            incomplete. Refresh the page and try again.
         </li>
         <li>
             <strong>Unique Tags:</strong>

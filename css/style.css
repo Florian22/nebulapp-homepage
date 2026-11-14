@@ -169,3 +169,20 @@ footer a:hover { opacity: 1; text-decoration: underline; }
     .doc-sidebar { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; position: relative; top: 0; width: 100%; }
     .app-actions .btn, .app-actions .btn-small { flex: 1; text-align: center; }
 }
+
+/* --- DOCS LAYOUT: lighter reading layout for the AFM docs page --- */
+        .doc-content { max-width: 800px; }
+        .lead { font-size: 1.1rem; color: var(--text-light); }
+        .doc-section h3 { margin-top: 2rem; }
+        .doc-section p { margin-bottom: 0.75rem; }
+        figure { margin: 1.25rem 0; text-align: center; }
+        figure img { max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color); }
+        figcaption { font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem; }
+        .callout { background: var(--bg-light); border-left: 3px solid var(--primary-color); padding: 0.75rem 1rem; border-radius: 4px; margin: 1rem 0; }
+        .callout p { margin: 0; }
+        details.doc-details { margin: 1rem 0; border: 1px solid var(--border-color); border-radius: 4px; padding: 0.75rem 1rem; }
+        details.doc-details summary { cursor: pointer; font-weight: 600; color: var(--primary-color); }
+        .table-wrap { overflow-x: auto; margin: 1rem 0; }
+        table.doc-table { width: 100%; border-collapse: collapse; }
+        table.doc-table th, table.doc-table td { padding: 10px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+        table.doc-table thead tr { background: var(--bg-light); }

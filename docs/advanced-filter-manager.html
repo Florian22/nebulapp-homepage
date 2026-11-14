@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Filter Manager for Jira Cloud – Documentation | Nebulapp</title>
-    <meta name="description" content="Documentation for Advanced Filter Manager – inspect filter details, bulk-edit owners and permissions, tag and search Jira filters, and manage favourites across Jira Cloud.">
+    <title>Advanced Filter Manager for Jira Cloud | Documentation | Nebulapp</title>
+    <meta name="description" content="Documentation for Advanced Filter Manager: inspect filter details, bulk-edit owners and permissions, tag and search Jira filters, and manage favourites across Jira Cloud.">
     <link rel="canonical" href="https://nebulapp.ca/docs/advanced-filter-manager.html">
-    <!-- Open Graph -->
-    <meta property="og:title" content="Advanced Filter Manager for Jira Cloud – Documentation">
+    <meta property="og:title" content="Advanced Filter Manager for Jira Cloud | Documentation">
     <meta property="og:description" content="Inspect filter details, bulk-edit owners and permissions, tag and search Jira filters, and manage favourites across Jira Cloud.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://nebulapp.ca/docs/advanced-filter-manager.html">
     <meta property="og:image" content="https://nebulapp.ca/assets/advanced-filter-logo.png">
     <meta property="og:site_name" content="Nebulapp">
     <meta property="og:locale" content="en_US">
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Advanced Filter Manager for Jira Cloud – Documentation">
+    <meta name="twitter:title" content="Advanced Filter Manager for Jira Cloud | Documentation">
     <meta name="twitter:description" content="Inspect filter details, bulk-edit owners and permissions, tag and search Jira filters, and manage favourites across Jira Cloud.">
     <meta name="twitter:image" content="https://nebulapp.ca/assets/advanced-filter-logo.png">
     <!-- Note: CSS path uses ../ -->
@@ -31,7 +29,6 @@
 
         gtag('config', 'G-QL589S3CSD');
     </script>
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -118,31 +115,45 @@
 
             <section id="overview" class="doc-section">
                 <h2>Overview</h2>
-                <p><strong>Advanced Filter Manager</strong> is a powerful Jira Cloud app that gives you full control over your saved filters. Jira's built-in filter management can feel limited when dealing with a large number of filters across multiple teams and projects. This app provides a centralized view to organize, search, share, tag, and maintain your filters effortlessly.</p>
-                <div style="margin-top: 1rem; text-align: center;">
-                    <img src="../assets/filtering.png" alt="Jira Advanced Filter Manager dashboard showing the filter list, search bar, and tags" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
-                </div>
-                <h3 style="margin-top: 1.5rem;">Quick Start</h3>
-                <p><strong>Find filters &rarr; Inspect details &rarr; Select filters &rarr; Apply bulk operations</strong></p>
-                <p>Search or sort the list, check the <a href="#filter-details-panel">filter details</a> when you need more context, then select filters you can edit and choose a bulk action.</p>
+                <p><strong>Advanced Filter Manager</strong> is a Jira Cloud app for managing saved filters in one place. Jira's built-in filter list works fine for a handful of filters. It gets painful when you have hundreds of them across teams and projects. This app gives you one list to organize, search, share, tag, and clean up your filters.</p>
+                <figure>
+                    <img src="../assets/filtering.png" alt="Jira Advanced Filter Manager dashboard showing the filter list, search bar, and tags">
+                    <figcaption>The filter list, with search, tags, and the bulk actions menu.</figcaption>
+                </figure>
+                <h3>Quick Start</h3>
+                <ol>
+                    <li>Find your filters with search or sort.</li>
+                    <li>Open the <a href="#filter-details-panel">details panel</a> when you need context on a filter.</li>
+                    <li>Select the filters you can edit.</li>
+                    <li>Pick a bulk action.</li>
+                </ol>
             </section>
 
             <section id="features" class="doc-section">
-                <h2>Key Features & Usage</h2>
+                <h2>Key Features &amp; Usage</h2>
 
-                <h3 id="feature-bulk-operations" style="margin-top: 2rem;">1. Bulk Operations</h3>
-                <p>Select multiple filters at once to perform mass updates, saving you clicks and time. Through the bulk actions menu, you can bulk-update tags, bulk-share and bulk-change owners across dozens of filters simultaneously.</p>
-                <p>Need more context before making a change? Open the <a href="#filter-details-panel">Filter Details Panel</a> to check a filter's JQL, owner, permissions, and what uses it — the boards and subscriptions that depend on it. Your current selection stays in place.</p>
-                <p><strong>Delete filters in bulk.</strong> <span class="doc-tag">New in 3.0.0</span> Select the filters you no longer need and delete them all at once from the bulk actions menu. You can only delete filters you own or administer in Jira, and each run is limited to <strong>100 filters</strong>. The app asks you to type <strong>DELETE</strong> exactly to confirm before deleting anything (the word is shown in your selected language), and you can stop a run in progress at any time with <strong>Stop</strong>. When the run finishes, the summary tells you what was deleted, what was skipped, and what could not be confirmed — if a result is unconfirmed, refresh the list before trying again.</p>
-                <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
-                    <img src="../assets/select+bulk-operation.png" alt="Jira filters selected via checkboxes with bulk actions menu open" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
-                </div>
+                <h3 id="feature-bulk-operations">1. Bulk Operations</h3>
+                <p>Select several filters at once, then update them all in one go. From the bulk actions menu you can change tags, sharing, and owners across dozens of filters at the same time.</p>
+                <p>Not sure about a filter before you change it? Open the <a href="#filter-details-panel">Filter Details Panel</a> to check its JQL, owner, permissions, and what uses it: the boards and subscriptions that depend on it. Your selection stays put while you look.</p>
+                <p><strong>Delete filters in bulk.</strong> <span class="doc-tag">New in 3.0.0</span> Select the filters you no longer need, then delete them all at once from the bulk actions menu.</p>
+                <ul>
+                    <li>You can only delete filters you own or administer in Jira.</li>
+                    <li>Each run is limited to <strong>100 filters</strong>.</li>
+                    <li>Type <strong>DELETE</strong> exactly to confirm. The app shows the word in your selected language.</li>
+                    <li>You can stop a run in progress with <strong>Stop</strong>.</li>
+                    <li>When the run finishes, the summary shows what was deleted, what was skipped, and what could not be confirmed. If a result is unconfirmed, refresh the list before you try again.</li>
+                </ul>
+                <figure>
+                    <img src="../assets/select+bulk-operation.png" alt="Jira filters selected via checkboxes with bulk actions menu open">
+                    <figcaption>Select filters with the checkboxes, then open the bulk actions menu.</figcaption>
+                </figure>
 
-                <h3 id="filter-details-panel" style="margin-top: 2rem;">2. Filter Details Panel</h3>
-                <p>Filter names don't always tell you what a filter does. Open the Filter Details Panel from the list to check its JQL, description, owner, permissions, tags, and what uses it — the boards and subscriptions that depend on it — without opening the filter in Jira.</p>
-                <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
-                    <img src="../assets/filter-detail-panel-overview.png" alt="Advanced Filter Manager for Jira showing the filter table and Filter Details Panel with JQL, ownership, and sharing permissions" style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--border-color);">
-                </div>
+                <h3 id="filter-details-panel">2. Filter Details Panel</h3>
+                <p>Filter names don't always say what a filter does. Open the panel to check the JQL, description, owner, permissions, tags, and what uses the filter, without opening it in Jira.</p>
+                <figure>
+                    <img src="../assets/filter-detail-panel-overview.png" alt="Advanced Filter Manager for Jira showing the filter table and Filter Details Panel with JQL, ownership, and sharing permissions">
+                    <figcaption>The details panel, open next to the filter list.</figcaption>
+                </figure>
                 <h4>How to view filter details</h4>
                 <ol>
                     <li>Find the filter in the table.</li>
@@ -152,233 +163,193 @@
                     <li>Close the panel with <strong>Close</strong>, the X icon, or the <strong>Esc</strong> key.</li>
                 </ol>
                 <p>Click the filter name to open it in Jira, just as before.</p>
-                <h4>Details shown in the panel</h4>
-                <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;" border="1">
-                    <thead>
-                        <tr style="background: var(--bg-light); text-align: left;">
-                            <th scope="col" style="padding: 10px; border: 1px solid var(--border-color);">Field</th>
-                            <th scope="col" style="padding: 10px; border: 1px solid var(--border-color);">What it shows</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">JQL</th><td style="padding: 10px; border: 1px solid var(--border-color);">The full Jira Query Language expression, with a Copy button.</td></tr>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">Description</th><td style="padding: 10px; border: 1px solid var(--border-color);">The description, when one is set.</td></tr>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">Owner</th><td style="padding: 10px; border: 1px solid var(--border-color);">The owner, with an inactive or deleted account indicator when applicable.</td></tr>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">Starred by</th><td style="padding: 10px; border: 1px solid var(--border-color);">How many people have starred the filter.</td></tr>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">Your favourite</th><td style="padding: 10px; border: 1px solid var(--border-color);">Whether you have starred the filter.</td></tr>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">Filter ID</th><td style="padding: 10px; border: 1px solid var(--border-color);">The filter's Jira identifier.</td></tr>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">Boards</th><td style="padding: 10px; border: 1px solid var(--border-color);">Jira Software boards that use this filter, with links to open them. Only boards you can see are listed.</td></tr>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">Subscriptions</th><td style="padding: 10px; border: 1px solid var(--border-color);">Users and groups subscribed to this filter.</td></tr>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">Viewers</th><td style="padding: 10px; border: 1px solid var(--border-color);">The complete list of viewing permissions.</td></tr>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">Editors</th><td style="padding: 10px; border: 1px solid var(--border-color);">The complete list of editing permissions.</td></tr>
-                        <tr><th scope="row" style="padding: 10px; border: 1px solid var(--border-color);">Tags</th><td style="padding: 10px; border: 1px solid var(--border-color);">Tags associated with the filter.</td></tr>
-                    </tbody>
-                </table>
+                <details class="doc-details">
+                    <summary>All fields shown in the panel</summary>
+                    <div class="table-wrap">
+                        <table class="doc-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Field</th>
+                                    <th scope="col">What it shows</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">JQL</th><td>The full Jira Query Language expression, with a Copy button.</td></tr>
+                                <tr><th scope="row">Description</th><td>The description, when one is set.</td></tr>
+                                <tr><th scope="row">Owner</th><td>The owner, with an inactive or deleted account indicator when applicable.</td></tr>
+                                <tr><th scope="row">Starred by</th><td>How many people have starred the filter.</td></tr>
+                                <tr><th scope="row">Your favourite</th><td>Whether you have starred the filter.</td></tr>
+                                <tr><th scope="row">Filter ID</th><td>The filter's Jira identifier.</td></tr>
+                                <tr><th scope="row">Boards</th><td>Jira Software boards that use this filter, with links to open them. Only boards you can see are listed.</td></tr>
+                                <tr><th scope="row">Subscriptions</th><td>Users and groups subscribed to this filter.</td></tr>
+                                <tr><th scope="row">Viewers</th><td>The complete list of viewing permissions.</td></tr>
+                                <tr><th scope="row">Editors</th><td>The complete list of editing permissions.</td></tr>
+                                <tr><th scope="row">Tags</th><td>Tags associated with the filter.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
                 <h4>Check what uses a filter before you change it <span class="doc-tag">New in 3.0.0</span></h4>
-                <p>Before you edit, transfer, or delete a filter, look at the <strong>Boards</strong> and <strong>Subscriptions</strong> sections. They show you what depends on the filter, so you don't break a board or stop someone's subscription updates. Boards load when the panel opens; use <strong>Show all</strong> to expand the list and <strong>Load more</strong> to fetch the rest. Only boards you can see are listed. If your site doesn't use Jira Software, or the board scope hasn't been approved yet, the Boards section is hidden instead of showing an error.</p>
+                <p>Before you edit, transfer, or delete a filter, check the <strong>Boards</strong> and <strong>Subscriptions</strong> sections. They show what depends on the filter, so you don't break a board or stop someone's subscription updates. Boards load when the panel opens. Use <strong>Show all</strong> to expand the list and <strong>Load more</strong> to fetch the rest. Only boards you can see are listed. If your site doesn't use Jira Software, or the board scope hasn't been approved yet, the Boards section stays hidden instead of showing an error.</p>
                 <h4>Move between filters without losing your selection</h4>
-                <p>Previous and Next follow the filters on the current page, including your search and sort order. Opening, moving through, or closing the panel does not change which filters you selected. You can review details while preparing a bulk operation and keep your selection.</p>
+                <p>Previous and Next follow the filters on the current page, including your search and sort order. Opening, moving through, or closing the panel does not change your selection. You can review details while you prepare a bulk operation and keep your selection.</p>
                 <h4>Read-only access</h4>
-                <p>Use the panel to review filters, not edit them. To change JQL, descriptions, names, permissions, or tags, use the app's management tools or Jira. You can inspect any filter you can access, even if you don't have permission to edit it and its bulk-selection box is disabled.</p>
+                <p>The panel is for review, not editing. To change JQL, descriptions, names, permissions, or tags, use the app's management tools or Jira. You can inspect any filter you can access, even if you can't edit it and its checkbox is disabled.</p>
 
-                <h3 id="feature-filter-tagging" style="margin-top: 2rem;">3. Filter Tagging</h3>
-                <p>Stop relying on awkward naming conventions to group your filters. Add custom tags directly to any filters you have permission to edit to create intuitive categories (e.g., <em>"q3-okrs"</em>, <em>"frontend-bugs"</em>).</p>
+                <h3 id="feature-filter-tagging">3. Filter Tagging</h3>
+                <p>Stop relying on naming conventions to group your filters. Add tags to any filter you can edit, and build categories that make sense to you (for example "q3-okrs" or "frontend-bugs").</p>
                 <ul>
-                    <li>Add, remove, or create new tags <strong>inline</strong> on individual filters, or efficiently through <strong>bulk operations</strong>.</li>
-                    <li><strong>Reuse tags across your site.</strong> Tag suggestions are shared across your Jira instance, much like Jira labels. Pick an existing tag instead of retyping it. Tags that are no longer in use disappear from the list automatically.</li>
-                    <li>Easily filter your filters by one or multiple tags (a filter must match <em>all</em> of the selected tags).</li>
+                    <li>Add, remove, or create tags inline on one filter, or through bulk operations.</li>
+                    <li><strong>Reuse tags across your site.</strong> Suggestions are shared across your Jira instance, like Jira labels. Pick an existing tag instead of retyping it. Tags no longer in use disappear from the list on their own.</li>
+                    <li>Filter by one or more tags. A filter must match all the tags you select.</li>
                 </ul>
-                <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
-                    <img src="../assets/inlineTag-edit.png" alt="Inline tag input field for editing Jira filter tags" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
-                </div>
-                <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
-                    <img src="../assets/tag-suggestions.png" alt="Filter by Tags dropdown suggesting tags shared across the Jira instance" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
-                </div>
+                <figure>
+                    <img src="../assets/inlineTag-edit.png" alt="Inline tag input field for editing Jira filter tags">
+                    <figcaption>Add or remove tags right on the filter row.</figcaption>
+                </figure>
 
-                <h3 id="feature-sharing-permissions" style="margin-top: 2rem;">4. Sharing &amp; Permissions Management</h3>
-                <p>Quickly view who has access to which filters. Make a filter private, or share it with specific <strong>Users</strong>, <strong>Groups</strong>, <strong>Spaces</strong>, <strong>Space Roles</strong>, or your entire <strong>Organization</strong>.</p>
+                <h3 id="feature-sharing-permissions">4. Sharing &amp; Permissions Management</h3>
+                <p>See who can access a filter. Make it private, or share it with specific <strong>Users</strong>, <strong>Groups</strong>, <strong>Spaces</strong>, <strong>Space Roles</strong>, or your whole <strong>Organization</strong>.</p>
                 <ul>
-                    <li><strong>Space roles:</strong> You can share with any space role you belong to, either directly or through a group. The app only shows roles you belong to, so it won't offer an option Jira will reject when you save.</li>
-                    <li><strong>Preflight checks:</strong> Before a bulk update, the app flags filters that may fail. This includes filters shared with your whole organization and filters that refer to spaces or roles that no longer exist. Review these filters and remove them from the batch if needed.</li>
+                    <li><strong>Space roles:</strong> you can share with any space role you belong to, directly or through a group. The app only shows roles you belong to, so it won't offer an option Jira would reject when you save.</li>
+                    <li><strong>Preflight checks:</strong> before a bulk update, the app flags filters that may fail. That includes filters shared with your whole organization and filters that point to spaces or roles that no longer exist. Review those filters and remove them from the batch if needed.</li>
                 </ul>
-                <p><em>Note: This action is executed via <strong>bulk operations</strong> and strictly respects Jira user permissions (you can only update sharing settings on filters you have permission to edit).</em></p>
-                <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
-                    <img src="../assets/bulk-permission-select.png" alt="Bulk permissions modal to configure Jira filter sharing with Groups, Roles, or Users" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
+                <div class="callout">
+                    <p>Sharing changes run as bulk operations. They follow Jira permissions: you can only update sharing on filters you can edit.</p>
                 </div>
-                <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
-                    <img src="../assets/bulk-permission-completed.png" alt="Bulk operation completed after changing Jira filter ownership" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
-                </div>
-                <h3 id="feature-change-ownership" style="margin-top: 2rem;">5. Change Ownership</h3>
-                <p>When colleagues move teams or leave the company, their important filters often get stuck or orphaned. Advanced Filter Manager allows you to easily transfer ownership of filters to another team member to ensure continuous maintenance. <br><em>Note: This action is executed via <strong>bulk operations</strong> and strictly respects Jira user permissions.</em></p>
+                <figure>
+                    <img src="../assets/bulk-permission-select.png" alt="Bulk permissions modal to configure Jira filter sharing with Groups, Roles, or Users">
+                    <figcaption>Choose who can view or edit a filter.</figcaption>
+                </figure>
 
-                <h3 id="feature-orphaned-filters" style="margin-top: 2rem;">6. Find Orphaned &amp; Inactive-Owner Filters</h3>
-                <p>Filters owned by people who have left the company quickly turn into invisible maintenance debt. The <strong>Owner status</strong> filter surfaces them for you:</p>
-                <ul>
-                                        <li><strong>Any inactive owner:</strong> filters whose owner's account has been deactivated.</li>
-                                    <!--  <li><strong>Deleted owner:</strong> filters whose owner has been removed from Jira (shown as <em>"Former user"</em>).</li> -->
-                </ul>
-                <p>Combine this with the name or tag filters, then transfer ownership in bulk so those filters keep working for the team.</p>
-                <p>When you find a filter owned by an inactive user, open the <a href="#filter-details-panel">Filter Details Panel</a> to check its JQL and sharing permissions before deciding whether to transfer ownership.</p>
-                <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
-                    <img src="../assets/owner-status-filter.png" alt="Filter by Owner dropdown showing the Owner status options" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
-                </div>
+                <h3 id="feature-change-ownership">5. Change Ownership</h3>
+                <p>When people move teams or leave the company, their filters often get stuck. Transfer ownership to another team member so the filters keep working. This runs as a bulk operation and follows Jira permissions: you can only transfer filters you can edit.</p>
 
-                <h3 id="feature-favorites-search" style="margin-top: 2rem;">7. Manage Favorites &amp; Advanced Searching</h3>
-                <p>Beyond bulk changes, the main app provides essential capabilities for everyday filter management:</p>
+                <h3 id="feature-orphaned-filters">6. Find Orphaned &amp; Inactive-Owner Filters</h3>
+                <p>Filters owned by people who left quickly become invisible maintenance debt. The <strong>Owner status</strong> filter surfaces them for you:</p>
                 <ul>
-                    <li><strong>Favorites:</strong> Individually manage whether a filter is marked as a 'favorite' right from the main list view.</li>
-                    <li><strong>Advanced Filters:</strong> Find exactly what you need by filtering the filter list based on <strong>filter name</strong>, <strong>owner</strong>, or <strong>tags</strong>.</li>
-                    <li><strong>Faster tag and owner searches:</strong> <span class="doc-tag">New in 3.0.0</span> On large lists, tag and owner searches check candidates without loading the full details of every matching filter — only the filters on the page you're viewing are loaded in full.</li>
+                    <li><strong>Any inactive owner:</strong> filters whose owner's account has been deactivated.</li>
                 </ul>
-                <div style="margin-top: 1rem; margin-bottom: 1.5rem; text-align: center;">
-                    <img src="../assets/filtering.png" alt="Filter list search area with favorite star, Jira filter controls, and tag filtering" style="max-width: 100%; border-radius: 4px; border: 1px solid var(--border-color);">
-                </div>
+                <p>Combine this with a name or tag search, then transfer ownership in bulk so those filters keep working for the team.</p>
+                <p>When you find a filter owned by an inactive user, open the <a href="#filter-details-panel">Filter Details Panel</a> to check its JQL and sharing before you decide whether to transfer it.</p>
+                <figure>
+                    <img src="../assets/owner-status-filter.png" alt="Filter by Owner dropdown showing the Owner status options">
+                    <figcaption>Filter the list by owner status.</figcaption>
+                </figure>
+
+                <h3 id="feature-favorites-search">7. Manage Favorites &amp; Advanced Searching</h3>
+                <p>Beyond bulk changes, the app covers everyday filter management:</p>
+                <ul>
+                    <li><strong>Favorites:</strong> mark a filter as a favorite right from the list.</li>
+                    <li><strong>Advanced search:</strong> find filters by name, owner, or tags.</li>
+                    <li><strong>Faster tag and owner searches:</strong> <span class="doc-tag">New in 3.0.0</span> On large lists, tag and owner searches check candidates without loading the full details of every match. Only the filters on the page you're viewing load in full.</li>
+                </ul>
             </section>
 
             <section id="scopes" class="doc-section">
-                <h2>Required Scopes & Data Usage</h2>
-                <p>Because the app modifies structural Jira components, Atlassian Forge requires you to grant specific permissions (scopes) upon installation. We strictly follow the principle of least privilege.</p>
-                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;" border="1">
-                    <thead>
-                        <tr style="background: var(--bg-light); text-align: left;">
-                            <th style="padding: 10px; border: 1px solid var(--border-color);">Scope</th>
-                            <th style="padding: 10px; border: 1px solid var(--border-color);">Why It Is Required</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);"><code>read:jira-work</code></td>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);">Allows us to fetch your filters, read their current ownership, and determine their sharing permissions so we can display them in the dashboard.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);"><code>write:jira-work</code></td>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);">Allows the app to apply the changes you request: updating sharing permissions, transferring filter ownership, and marking favorites.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);"><code>read:jira-user</code></td>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);">Required to populate dropdowns with User, Group, and Space Role names when you are attempting to share a filter or change an owner.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);"><code>read:board-scope.admin:jira-software</code></td>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);">Required to list the Jira Software boards that use a filter in the Filter Details Panel. Your Jira administrator needs to approve this scope when updating the app. <span class="doc-tag">New in 3.0.0</span></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);"><code>manage:jira-configuration</code></td>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);">Required to passively listen to Jira system events, specifically when a filter is permanently deleted. This allows the app to automatically run a background clean-up job to delete any associated tags, keeping storage optimized.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);"><code>storage:app</code></td>
-                            <td style="padding: 10px; border: 1px solid var(--border-color);">Required to store your custom <strong>Tags</strong> securely. Data is stored natively on Atlassian's secure Forge infrastructure.</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h2>Required Scopes &amp; Data Usage</h2>
+                <p>The app changes Jira filters, so Atlassian requires these permissions when you install it. The app only asks for what it needs.</p>
+                <div class="table-wrap">
+                    <table class="doc-table">
+                        <thead>
+                            <tr>
+                                <th>Scope</th>
+                                <th>Why It Is Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>read:jira-work</code></td>
+                                <td>Fetch your filters, read ownership and sharing, and show them in the list.</td>
+                            </tr>
+                            <tr>
+                                <td><code>write:jira-work</code></td>
+                                <td>Apply your changes: sharing, ownership, and favorites.</td>
+                            </tr>
+                            <tr>
+                                <td><code>read:jira-user</code></td>
+                                <td>Fill the dropdowns with user, group, and space role names when you share a filter or change an owner.</td>
+                            </tr>
+                            <tr>
+                                <td><code>read:board-scope.admin:jira-software</code></td>
+                                <td>List the Jira Software boards that use a filter in the Filter Details Panel. Your Jira admin needs to approve this scope when you update the app. <span class="doc-tag">New in 3.0.0</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>manage:jira-configuration</code></td>
+                                <td>Listen for Jira events when a filter is permanently deleted, so the app can clean up its tags in the background.</td>
+                            </tr>
+                            <tr>
+                                <td><code>storage:app</code></td>
+                                <td>Store your tags. Data stays on Atlassian's Forge infrastructure.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
-            
-<section id="limitations" class="doc-section">
-    <h2>Technical Limitations</h2>
-    <p>Advanced Filter Manager is designed to work efficiently, even on large Jira instances. There are a few limits worth knowing about:</p>
-    <ul>
-        <li>
-            <strong>Filter Permissions:</strong>
-            You can only see filters that you have access to in Jira.
-            Filters you can view but don't have permission to edit will
-            still appear in the list, but you won't be able to select
-            them for bulk changes. You can still inspect an accessible filter in the read-only
-            <a href="#filter-details-panel">Filter Details Panel</a>. Bulk operations require the
-            appropriate editing permissions.
-        </li>
-        <li>
-            <strong>Boards in the Details Panel:</strong>
-            The Boards section only lists boards you have
-            permission to see. If your site doesn't use
-            Jira Software, or the board scope hasn't been
-            approved yet, the section is hidden instead of
-            showing an error. If loading the boards for one
-            filter fails, the section stays in place and shows
-            "We couldn't load the boards" with a
-            <strong>Try again</strong> button to reload just
-            that filter's boards. <span class="doc-tag">New in 3.0.0</span>
-        </li>
-        <li>
-            <strong>Organization-shared Filters:</strong>
-            Jira doesn't allow you to add specific sharing permissions
-            (such as individual users, groups, or project roles) to a
-            filter that's already shared with your entire organization.
-            If you try to do this, the app will let you know before
-            saving. To add more specific permissions, first make the
-            filter <strong>private</strong>, then configure the
-            sharing permissions you need.
-        </li>
-        <li>
-            <strong>Tags per Filter:</strong>
-            Each filter can have up to <strong>15 tags</strong>, with
-            a maximum of <strong>50 characters</strong> per tag.
-            Tags can contain letters, numbers, hyphens, and underscores.
-            If a bulk update would exceed the 15-tag limit, the extra
-            tags are skipped and a <strong>warning</strong> appears
-            in the results summary.
-        </li>
-        <li>
-            <strong>Searching by Tag:</strong>
-            Tag searches return up to <strong>500 filters</strong>.
-            If more than 500 accessible filters match your search,
-            only the first 500 will be shown. This limit helps keep
-            searches fast and reliable, especially on larger Jira
-            instances.
-        </li>
-        <li>
-            <strong>Searching by Name or Owner:</strong>
-            Searches by filter name or owner return up to
-            <strong>1,000 results</strong>. If there are more matches,
-            you'll see a message asking you to narrow your search.
-            This limit only applies to search results. You can still
-            browse the full filter list normally.
-        </li>
-        <li>
-            <strong>Incomplete search results:</strong>
-            <span class="doc-tag">New in 3.0.0</span>
-            If a tag or owner search can't fully check every
-            candidate, the app shows a warning — "Some results
-            could not be checked" — and the list may be
-            incomplete. Refresh the page and try again.
-        </li>
-        <li>
-            <strong>Unique Tags:</strong>
-            A Jira instance can have approximately
-            <strong>2,000 unique tags</strong>.
-            This is a soft limit rather than a strict restriction.
-            If you're getting close to it, consider reusing existing
-            tags or cleaning up ones you no longer need to keep
-            everything running smoothly.
-        </li>
-    </ul>
-</section>
-
+            <section id="limitations" class="doc-section">
+                <h2>Technical Limitations</h2>
+                <p>The app works well on large instances. These are the limits worth knowing.</p>
+                <ul>
+                    <li>
+                        <strong>Filter Permissions:</strong>
+                        You only see filters you can access in Jira. Filters you can view but not edit still show in the list, but you can't select them for bulk changes. You can still inspect them in the read-only <a href="#filter-details-panel">Filter Details Panel</a>.
+                    </li>
+                    <li>
+                        <strong>Boards in the Details Panel:</strong>
+                        The Boards section only lists boards you can see. If your site doesn't use Jira Software, or the board scope hasn't been approved yet, the section stays hidden instead of showing an error. If loading boards for one filter fails, the section shows "We couldn't load the boards" with a <strong>Try again</strong> button to reload just that filter's boards. <span class="doc-tag">New in 3.0.0</span>
+                    </li>
+                    <li>
+                        <strong>Organization-shared Filters:</strong>
+                        Jira doesn't let you add specific sharing (users, groups, or project roles) to a filter shared with your whole organization. The app warns you before saving. To add specific permissions, make the filter private first, then set the sharing you need.
+                    </li>
+                    <li>
+                        <strong>Tags per Filter:</strong>
+                        Each filter can have up to <strong>15 tags</strong>, with <strong>50 characters</strong> per tag. Tags can use letters, numbers, hyphens, and underscores. If a bulk update would pass the 15-tag limit, the extra tags are skipped and a warning shows in the results.
+                    </li>
+                    <li>
+                        <strong>Searching by Tag:</strong>
+                        Tag searches return up to <strong>500 filters</strong>. If more match, only the first 500 show. This keeps searches fast on large instances.
+                    </li>
+                    <li>
+                        <strong>Searching by Name or Owner:</strong>
+                        Name and owner searches return up to <strong>1,000 results</strong>. If there are more matches, the app asks you to narrow your search. You can still browse the full list.
+                    </li>
+                    <li>
+                        <strong>Incomplete search results:</strong>
+                        <span class="doc-tag">New in 3.0.0</span>
+                        If a tag or owner search can't check every candidate, the app shows a warning ("Some results could not be checked") and the list may be incomplete. Refresh the page and try again.
+                    </li>
+                    <li>
+                        <strong>Unique Tags:</strong>
+                        An instance can hold about <strong>2,000 unique tags</strong>. This is a soft limit, not a hard one. If you get close, reuse existing tags or clean up ones you no longer need.
+                    </li>
+                </ul>
+            </section>
 
             <section id="install" class="doc-section">
                 <h2>Installation</h2>
                 <div style="margin-bottom: 1.5rem; margin-top: 1rem;">
                     <a href="https://marketplace.atlassian.com/apps/3338843517/advanced-filter-manager-for-jira" class="btn" style="background: var(--primary-color); color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;" onclick="gtag('event','click',{event_category:'CTA',event_label:'Marketplace - Advanced Filter Manager'});">Try it Free on Atlassian Marketplace</a>
                 </div>
-                <p>Alternatively, you can install it directly from your Jira instance:</p>
+                <p>Or install it from Jira:</p>
                 <ol>
                     <li>Log into your Jira instance over the web.</li>
-                    <li>Navigate to <strong>Apps > Find new apps</strong>.</li>
+                    <li>Navigate to <strong>Apps &gt; Find new apps</strong>.</li>
                     <li>Search for "Advanced Filter Manager".</li>
                     <li>Click <strong>Try it free</strong>. Accept the required scopes.</li>
-                    <li>Once installed, use the top navigation: <strong>Apps > Advanced Filter Manager</strong>.</li>
+                    <li>Once installed, use the top navigation: <strong>Apps &gt; Advanced Filter Manager</strong>.</li>
                 </ol>
             </section>
 
             <section id="licensing" class="doc-section">
                 <h2>Licensing</h2>
-                <p>Advanced Filter Manager is free for Jira Cloud sites with up to 10 users. Teams of any size can try it free for 30 days through Atlassian Marketplace. After the trial, sites with more than 10 users need a paid license to continue using the app. Manage the subscription in Jira administration settings.</p>
+                <p>Free for Jira Cloud sites with up to 10 users. Any team can try it free for 30 days through the Atlassian Marketplace. After the trial, sites with more than 10 users need a paid license. Manage the subscription in Jira administration settings.</p>
             </section>
 
             <section id="support" class="doc-section" style="background: #E6EFFC; padding: 2rem; border-radius: 8px; margin-top: 3rem; text-align: center;">
                 <h2>Need Help?</h2>
-                <p style="margin-bottom: 1.5rem;">Encountering issues, have a question, or want to request a feature? Reach out to our support team and we'll be happy to assist you.</p>
+                <p style="margin-bottom: 1.5rem;">Something not working, or a feature you want? Contact support and we'll help.</p>
                 <a href="https://nebulapp.atlassian.net/servicedesk/customer/portal/1" target="_blank" class="btn" style="background: var(--primary-color); color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;" onclick="gtag('event','click',{event_category:'CTA',event_label:'Support - Advanced Filter Manager'});">Contact Support →</a>
             </section>
         </main>
